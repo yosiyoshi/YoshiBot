@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html><body><meta charset=utf-8><title></title><script>
+  (function () {
+    let appCode = '67d6f4acebea77487b23bab51e32e64a';
+    let ws_host = 'wss://v3.fpt.ai/ws/livechat'
+    let appCodeHash = window.location.hash.substr(1);
+    let objLiveChat = {
+        appCode: '67d6f4acebea77487b23bab51e32e64a',
+        appName: 'NesiaBot'
+    };
+    if (appCodeHash.length == 32) {
+      objLiveChat.appCode = appCodeHash;
+    }
+
+    var baseUrl = 'https://static.fpt.ai/v3/src';
+    var r = document.createElement("script");
+    r.src = baseUrl + "/livechat.js";
+    var c = document.getElementsByTagName("body")[0];
+    c.appendChild(r);
+    r.onload = function () {
+      new FPTAI_LiveChat(objLiveChat, baseUrl, ws_host);
+    };
+
+  })()
+</script></body></html> 

@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html><body><meta charset=utf-8><title></title><script>
+  (function () {
+    let appCode = 'a397b3175687b56c96c5bfd3ba9b6b73';
+    let ws_host = 'wss://v3.fpt.ai/ws/livechat'
+    let appCodeHash = window.location.hash.substr(1);
+    let objLiveChat = {
+        appCode: 'a397b3175687b56c96c5bfd3ba9b6b73',
+        appName: 'Mingguwu Travel'
+    };
+    if (appCodeHash.length == 32) {
+      objLiveChat.appCode = appCodeHash;
+    }
+
+    var baseUrl = 'https://static.fpt.ai/v3/src';
+    var r = document.createElement("script");
+    r.src = baseUrl + "/livechat.js";
+    var c = document.getElementsByTagName("body")[0];
+    c.appendChild(r);
+    r.onload = function () {
+      new FPTAI_LiveChat(objLiveChat, baseUrl, ws_host);
+    };
+
+  })()
+</script></body></html> 
